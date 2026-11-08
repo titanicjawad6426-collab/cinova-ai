@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CINOVA AI | منصة الإبداع بالذكاء الاصطناعي</title>
+
+<meta name="description" content="CINOVA AI - منصة متكاملة لصناعة الفيديوهات والصور والصوت والمحتوى باستخدام الذكاء الاصطناعي.">
+
+<style>
+
+:root {
+    --bg: #07091e;
+    --card: #111633;
+    --purple: #762cff;
+    --blue: #087cff;
+    --cyan: #00d9ff;
+    --text: #ffffff;
+    --muted: #aab2d0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+button, a {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #252c55;
+    background: rgba(7,9,30,.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 29px;
+    font-weight: 900;
+    direction: ltr;
+    background: linear-gradient(90deg,#fff,#00cfff,#884cff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    font-size: 14px;
+    color: #dce3ff;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--cyan);
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px 22px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: linear-gradient(100deg,var(--purple),var(--blue));
+    color: white;
+    box-shadow: 0 0 20px #632aff55;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px #632affaa;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #6652c8;
+    color: white;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 620px;
+    padding: 90px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background:
+    radial-gradient(circle at 80% 40%,#152d75 0%,transparent 40%),
+    radial-gradient(circle at 10% 20%,#35105d 0%,transparent 35%);
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-label {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 30px;
+    border: 1px solid #6744bb;
+    color: #b99aff;
+    background: #28165355;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(35px,5vw,65px);
+    line-height: 1.3;
+    margin-bottom: 22px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg,#00d9ff,#8b4dff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-buttons button {
+    font-size: 16px;
+    padding: 16px 28px;
+}
+
+.hero-visual {
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle,#263c91,#111633 65%);
+    box-shadow: 0 0 70px #4235ff66;
+    border: 2px solid #5159ff55;
+    flex-shrink: 0;
+}
+
+.hero-icon {
+    font-size: 145px;
+    filter: drop-shadow(0 0 30px #00aaff);
+}
+
+/* FEATURES */
+
+section {
+    padding: 80px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.section-title p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background: linear-gradient(145deg,#151c40,#0e1330);
+    border: 1px solid #28356b;
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    transition: .3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--cyan);
+    box-shadow: 0 10px 35px #006dff22;
+}
+
+.feature-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+.feature-card p {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* PRICING */
+
+.pricing {
+    background: #0b1029;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    max-width: 1050px;
+    margin: auto;
+}
+
+.price-card {
+    background: #141b3b;
+    border: 1px solid #303c72;
+    border-radius: 22px;
+    padding: 35px 25px;
+    text-align: center;
+}
+
+.price-card.featured {
+    border: 2px solid #8b45ff;
+    box-shadow: 0 0 35px #7135ff33;
+}
+
+.price-card h3 {
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: var(--cyan);
+}
+
+.price span {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.price-card ul {
+    list-style: none;
+    text-align: right;
+    margin: 25px 0;
+}
+
+.price-card li {
+    padding: 12px 0;
+    color: #d5dcf5;
+    border-bottom: 1px solid #293052;
+}
+
+.price-card button {
+    width: 100%;
+}
+
+/* CTA */
+
+.cta {
+    text-align: center;
+    background:
+    radial-gradient(circle at center,#24206c,#080b20 70%);
+}
+
+.cta h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    color: var(--muted);
+    margin-bottom: 30px;
+    line-height: 2;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 35px 7%;
+    text-align: center;
+    border-top: 1px solid #283052;
+    color: var(--muted);
+    line-height: 2;
+}
+
+footer strong {
+    color: white;
+}
+
+/* MOBILE */
+
+@media(max-width:900px) {
+
+    header {
+        padding: 17px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 65px 6%;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        width: 260px;
+        height: 260px;
+    }
+
+    .hero-icon {
+        font-size: 100px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+    }
+
+}
+
+@media(max-width:480px) {
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .header-buttons .btn {
+        padding: 9px 13px;
+        font-size: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2 {
+        font-size: 27px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">CINOVA AI ✦</div>
+
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#tools">الأدوات</a>
+        <a href="#pricing">الأسعار</a>
+        <a href="#about">عن المنصة</a>
+    </nav>
+
+    <div class="header-buttons">
+        <button class="btn btn-outline" onclick="showMessage()">
+            تسجيل الدخول
+        </button>
+
+        <button class="btn btn-primary" onclick="showMessage()">
+            إنشاء حساب
+        </button>
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            ✨ عالم الإبداع بالذكاء الاصطناعي
+        </div>
+
+        <h1>
+            حوّل أفكارك إلى
+            <span class="gradient-text">إبداعات مذهلة</span>
+        </h1>
+
+        <p>
+            اكتشف قوة الذكاء الاصطناعي مع CINOVA AI.
+            أنشئ فيديوهات احترافية وصوراً مذهلة وأصواتاً واقعية،
+            واكتب محتواك وترجمه بسهولة من مكان واحد.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="btn btn-primary"
+            onclick="document.getElementById('tools').scrollIntoView({behavior:'smooth'})">
+                🚀 ابدأ الآن مجاناً
+            </button>
+
+            <button class="btn btn-outline"
+            onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">
+                اكتشف الاشتراكات
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="hero-visual">
+        <div class="hero-icon">🎬</div>
+    </div>
+
+</div>
+
+
+<!-- TOOLS -->
+
+<section id="tools">
+
+    <div class="section-title">
+
+        <h2>اكتشف أدوات CINOVA AI</h2>
+
+        <p>
+            جميع أدوات الإبداع التي تحتاجها في منصة واحدة.
+        </p>
+
+    </div>
+
+    <div class="features-grid">
+
+        <div class="feature-card">
+            <div class="feature-icon">🎬</div>
+            <h3>صناعة الفيديو</h3>
+            <p>حوّل النصوص والأفكار والصور إلى فيديوهات بالذكاء الاصطناعي.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🖼️</div>
+            <h3>صناعة الصور</h3>
+            <p>أنشئ صوراً إبداعية وفنية انطلاقاً من وصفك النصي.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🎙️</div>
+            <h3>الصوت والتعليق</h3>
+            <p>حوّل النصوص إلى أصوات طبيعية بلغات ولهجات متعددة.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">✍️</div>
+            <h3>الكتابة الذكية</h3>
+            <p>اكتب القصص والسيناريوهات والإعلانات والمقالات.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🌍</div>
+            <h3>الترجمة</h3>
+            <p>ترجم النصوص والمحتوى إلى لغات مختلفة.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🎞️</div>
+            <h3>الفيديوهات الطويلة</h3>
+            <p>أنشئ فيديوهات متكاملة تتجاوز خمس دقائق في الخطط المدفوعة.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>الأدوات الإبداعية</h3>
+            <p>مجموعة أدوات لتحرير المحتوى وتحسينه وتطويره.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🤖</div>
+            <h3>المساعد الذكي</h3>
+            <p>مساعدك لإنشاء الأفكار وتطوير المشاريع والمحتوى.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRICING -->
+
+<section class="pricing" id="pricing">
+
+    <div class="section-title">
+
+        <h2>اختر خطتك المناسبة</h2>
+
+        <p>
+            ابدأ مجاناً، وانتقل إلى الاحتراف عندما تحتاج إلى المزيد.
+        </p>
+
+    </div>
+
+    <div class="pricing-grid">
+
+        <div class="price-card">
+
+            <h3>FREE</h3>
+
+            <div class="price">
+                $0
+                <span>/ مجاناً</span>
+            </div>
+
+            <ul>
+                <li>✓ إنشاء فيديو حتى 10 ثوانٍ</li>
+                <li>✓ عدد محدود من الصور</li>
+                <li>✓ أدوات كتابة محدودة</li>
+                <li>✓ أدوات صوت محدودة</li>
+                <li>✓ علامة مائية</li>
+            </ul>
+
+            <button class="btn btn-outline"
+            onclick="showMessage()">
+                ابدأ مجاناً
+            </button>
+
+        </div>
+
+
+        <div class="price-card featured">
+
+            <h3>PRO ⭐</h3>
+
+            <div class="price">
+                قريباً
+                <span>/ شهرياً</span>
+            </div>
+
+            <ul>
+                <li>✓ فيديوهات تتجاوز 5 دقائق</li>
+                <li>✓ جودة تصل إلى 1080p حسب المحرك</li>
+                <li>✓ إنشاء صور احترافية</li>
+                <li>✓ أصوات وتعليق احترافي</li>
+                <li>✓ ترجمة متعددة اللغات</li>
+                <li>✓ بدون علامة مائية</li>
+            </ul>
+
+            <button class="btn btn-primary"
+            onclick="showMessage()">
+                قريباً
+            </button>
+
+        </div>
+
+
+        <div class="price-card">
+
+            <h3>BUSINESS 💎</h3>
+
+            <div class="price">
+                قريباً
+                <span>/ شهرياً</span>
+            </div>
+
+            <ul>
+                <li>✓ فيديوهات طويلة حتى 30 دقيقة</li>
+                <li>✓ جودة تصل إلى 4K حسب المحرك</li>
+                <li>✓ أدوات متقدمة</li>
+                <li>✓ رصيد إنشاء أكبر</li>
+                <li>✓ أولوية المعالجة</li>
+                <li>✓ دعم فني</li>
+            </ul>
+
+            <button class="btn btn-outline"
+            onclick="showMessage()">
+                قريباً
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <h2>لماذا CINOVA AI؟</h2>
+
+        <p>
+            نؤمن أن الإبداع لا حدود له.
+            هدفنا توفير أدوات الذكاء الاصطناعي للجميع،
+            من صناع المحتوى إلى الشركات والمبدعين.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <h2>
+        إبداعك يبدأ من هنا 🚀
+    </h2>
+
+    <p>
+        اكتشف عالماً جديداً من الإمكانيات مع CINOVA AI.
+    </p>
+
+    <button class="btn btn-primary"
+    onclick="document.getElementById('tools').scrollIntoView({behavior:'smooth'})">
+
+        ابدأ رحلتك الآن
+
+    </button>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer id="about">
+
+    <strong>CINOVA AI</strong>
+
+    <p>
+        Imagine. Create. Innovate.
+    </p>
+
+    <p>
+        © 2026 CINOVA AI - جميع الحقوق محفوظة.
+    </p>
+
+</footer>
+
+
+<script>
+
+function showMessage() {
+
+    alert(
+        "مرحباً بك في CINOVA AI 🚀\n\n" +
+        "نحن نعمل حالياً على تجهيز نظام الحسابات والأدوات الذكية.\n" +
+        "سيكون متاحاً قريباً."
+    );
+
+}
+
+</script>
+
+</body>
+</html>
