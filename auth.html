@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>CINOVA AI - الحسابات</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg,#080a22,#17104a,#092c60);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 430px;
+    background: #111735;
+    border: 1px solid #45428c;
+    border-radius: 22px;
+    padding: 35px 25px;
+    box-shadow: 0 0 40px #5533ff33;
+}
+
+.logo {
+    text-align: center;
+    font-size: 34px;
+    font-weight: bold;
+    direction: ltr;
+    color: #40caff;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aab5d8;
+    margin-bottom: 30px;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tabs button {
+    width: 50%;
+    padding: 13px;
+    border-radius: 10px;
+    border: 1px solid #494b91;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.tabs button.active {
+    background: linear-gradient(90deg,#762cff,#087cff);
+    border: none;
+}
+
+label {
+    display: block;
+    margin: 15px 0 8px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #444d80;
+    background: #080e27;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #00cfff;
+}
+
+.submit {
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg,#762cff,#087cff);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+#message {
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.success {
+    color: #4dffb0;
+}
+
+.error {
+    color: #ff7777;
+}
+
+.forgot {
+    display: block;
+    text-align: left;
+    margin-top: 12px;
+    color: #6ecaff;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">CINOVA AI</div>
+
+    <div class="subtitle">
+        عالم الإبداع بالذكاء الاصطناعي
+    </div>
+
+    <div class="tabs">
+
+        <button id="loginTab" class="active">
+            تسجيل الدخول
+        </button>
+
+        <button id="registerTab">
+            إنشاء حساب
+        </button>
+
+    </div>
+
+    <form id="authForm">
+
+        <div id="nameGroup" hidden>
+
+            <label>الاسم الكامل</label>
+
+            <input
+                type="text"
+                id="fullName"
+                placeholder="أدخل اسمك"
+                autocomplete="name"
+            >
+
+        </div>
+
+        <label>البريد الإلكتروني</label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="example@email.com"
+            autocomplete="email"
+            required
+        >
+
+        <label>كلمة المرور</label>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="6 أحرف على الأقل"
+            minlength="6"
+            autocomplete="current-password"
+            required
+        >
+
+        <span class="forgot" id="forgot">
+            نسيت كلمة المرور؟
+        </span>
+
+        <button class="submit" id="submitButton">
+
+            تسجيل الدخول
+
+        </button>
+
+    </form>
+
+    <div id="message"></div>
+
+</div>
+
+<script type="module" src="auth.js"></script>
+
+</body>
+</html>
